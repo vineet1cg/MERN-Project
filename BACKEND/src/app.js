@@ -3,9 +3,11 @@ const app = express();
 const multer = require('multer');
 const uploadFile = require('./services/storage.service');
 const postModel = require('./models/post.model'); 
+const cors = require('cors')
 //middleware
 // required for crud operations
 app.use(express.json());
+app.use(cors());
 // for input fields that require more than text data 
 const upload = multer({ storage:multer.memoryStorage() })
 // basic route

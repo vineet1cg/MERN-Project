@@ -7,11 +7,11 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/api': {
-        target: 'http://localhost:3000',
+      "/api": {
+        target: "https://mern-project-fdh9.onrender.com",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
-  }
-})
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
+});
