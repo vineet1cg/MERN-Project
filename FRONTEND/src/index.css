@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  BRAVE FEED DESIGN SYSTEM
+  Mono Brutal is the absolute default state.
+*/
+:root {
+    --main: #DC2626;
+    /* Bold Red */
+    --secondary: #6B7280;
+    /* Neutral Gray */
+    --accent: #9CA3AF;
+    /* Light Gray */
+    --bg: #FFFFFF;
+    /* Pure White */
+    --text: #000000;
+    /* Pure Black */
+    --border-width: 4px;
+}
+
+/* HIGH-IMPACT THEME CLASSES */
+
+.theme-lime {
+    --main: #A3E635;
+    --secondary: #8B5CF6;
+    --accent: #FACC15;
+    --bg: #FFFFFF;
+    --text: #000000;
+}
+
+.theme-electric {
+    --main: #FFE600;
+    --secondary: #FF2E63;
+    --accent: #08D9D6;
+    --bg: #FFFFFF;
+    --text: #000000;
+}
+
+.theme-retro {
+    --main: #EF4444;
+    --secondary: #1E3A8A;
+    --accent: #166534;
+    --bg: #FFF8E7;
+    --text: #000000;
+}
+
+.theme-acid {
+    --main: #39FF14;
+    --secondary: #5B21B6;
+    --accent: #2563EB;
+    --bg: #111827;
+    --text: #FFFFFF;
+}
+
+.theme-sunset {
+    --main: #F97316;
+    --secondary: #DB2777;
+    --accent: #4F46E5;
+    --bg: #FACC15;
+    --text: #000000;
+}
+
+@layer base {
+    body {
+        @apply bg-[var(--bg)] text-[var(--text)] font-sans transition-colors duration-200 antialiased;
+    }
+}
+
+@layer components {
+    .neo-button {
+        @apply px-5 py-3 border-[var(--border-width)] border-black shadow-brutalist hover:shadow-brutalist-sm transition-all transform hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-1 active:translate-y-1 bg-[var(--main)] font-black uppercase text-sm text-black;
+    }
+
+    .neo-card {
+        @apply p-6 border-[var(--border-width)] border-black shadow-brutalist-lg bg-white text-black;
+    }
+
+    .neo-input {
+        @apply w-full px-4 py-3 border-[var(--border-width)] border-black shadow-brutalist focus:outline-none focus:ring-0 placeholder:text-gray-500 font-bold bg-white text-black;
+    }
+}
