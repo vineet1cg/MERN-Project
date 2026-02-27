@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import CreatePost from './pages/CreatePost'
 import Login from './pages/Login'
+import AdminSetup from './pages/AdminSetup'
 import ProtectedRoute from './components/ProtectedRoute'
 import Navbar from './components/Navbar'
 import { ThemeProvider } from './theme/ThemeContext'
@@ -20,6 +21,7 @@ function App() {
                     <main className="container mx-auto px-4 py-8">
                         <Routes>
                             <Route path="/login" element={<Login />} />
+                            <Route path="/admin-setup" element={<AdminSetup />} />
                             <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
                             <Route path="/create" element={<ProtectedRoute><CreatePost /></ProtectedRoute>} />
                         </Routes>
