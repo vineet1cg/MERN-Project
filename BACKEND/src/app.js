@@ -1,46 +1,43 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
-const multer = require('multer');
-const uploadFile = require('./services/storage.service');
-const postModel = require('./models/post.model');
-const cors = require('cors')
-//middleware
-// required for crud operations
 app.use(express.json());
-app.use(cors());
-// for input fields that require more than text data 
-const upload = multer({ storage: multer.memoryStorage() })
+const corsOptions = {
+    origin: [
+        'http://localhost:5173', // Local frontend
+        'https://mern-project-vineet.netlify.app', // Replace with your actual frontend deployment URL
+        process.env.FRONTEND_URL // Dynamic generic fallback
+    ],
+    credentials: true,
+};
+
+app.use(cors(corsOptions));
+const { protect } = require('./middleware/auth.middleware');
+const authRoutes = require('./routes/auth.routes');
+const postRoutes = require('./routes/post.routes');
+
 // basic route
 app.get('/', (req, res) => {
     res.status(200).json({
+        success: true,
         message: "Backend Running :D"
     });
 });
 
-// creating a post
-app.post('/create-post', upload.single("image"), async (req, res) => {
-    console.log(req.body);
-    console.log(req.file);
-    // user can add image and a caption
-    const result = await uploadFile(req.file.buffer);
-    const post = await postModel.create({
-        image: result.url,
-        caption: req.body.caption
+// routes
+app.use('/api/auth', authRoutes);
+
+app.use(protect); // Global protection
+
+app.use('/api/posts', postRoutes);
+
+// centralized error middleware
+app.use((err, req, res, next) => {
+    console.error("Global Error:", err);
+    res.status(500).json({
+        success: false,
+        message: err.message || "Server Error"
     });
-    return res.status(201).json({
-        message: "Post Created Successfully",
-        post
-    })
 });
 
-// see all posts 
-app.get('/posts', async (req, res) => {
-
-    // all posts
-    const posts = await postModel.find()
-    return res.status(200).json({
-        message: "Post Fetched Successfully",
-        posts
-    })
-})
 module.exports = app;
