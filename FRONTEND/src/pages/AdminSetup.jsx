@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ShieldCheck } from 'lucide-react';
 
-const ADMIN_KEY = 'punchline-admin-2026'; // Secret passphrase to access this page
+const ADMIN_KEY = import.meta.env.VITE_LOCAL_CHECKS;
 
 const API_URL = import.meta.env.PROD ? import.meta.env.VITE_BACKEND_URL : '/api';
 
