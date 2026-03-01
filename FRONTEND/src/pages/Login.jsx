@@ -48,7 +48,7 @@ const Login = () => {
                             className="neo-input w-full text-lg sm:text-xl py-3 sm:py-4"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            placeholder="admin@punchline.dev"
+                            placeholder="admin@whisperwall.dev"
                             required
                         />
                     </div>
