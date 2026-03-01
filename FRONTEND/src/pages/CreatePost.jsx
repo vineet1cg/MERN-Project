@@ -39,22 +39,22 @@ const CreatePost = () => {
     }
 
     return (
-        <div className="max-w-2xl mx-auto">
-            <div className="neo-card bg-white">
-                <h2 className="text-4xl font-black uppercase mb-8 tracking-tighter">Create New Post</h2>
+        <div className="max-w-2xl mx-auto mt-6 sm:mt-10">
+            <div className="neo-card bg-white p-6 sm:p-10">
+                <h2 className="text-3xl sm:text-4xl font-black uppercase mb-6 sm:mb-8 tracking-tighter">Create New Post</h2>
 
                 {error && (
-                    <div className="bg-[var(--secondary)] text-white border-4 border-black p-4 mb-8 font-black uppercase text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                    <div className="bg-[var(--secondary)] text-white border-4 border-black p-3 sm:p-4 mb-6 sm:mb-8 font-black uppercase text-center shadow-brutalist">
                         {error}
                     </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="space-y-3">
-                        <label className="block font-black uppercase text-lg tracking-tight">Caption</label>
+                <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+                    <div className="space-y-2 sm:space-y-3">
+                        <label className="block font-black uppercase text-base sm:text-lg tracking-tight">Caption</label>
                         <input
                             type="text"
-                            className="neo-input text-xl py-4"
+                            className="neo-input text-lg sm:text-xl py-3 sm:py-4"
                             value={caption}
                             onChange={(e) => setCaption(e.target.value)}
                             placeholder="Type something loud..."
@@ -62,9 +62,9 @@ const CreatePost = () => {
                         />
                     </div>
 
-                    <div className="space-y-3">
-                        <label className="block font-black uppercase text-lg tracking-tight">Post Image</label>
-                        <div className={`border-4 border-black border-dashed p-10 text-center cursor-pointer hover:bg-[var(--accent)] transition-colors relative transition-all ${preview ? 'p-0 border-solid' : ''}`}>
+                    <div className="space-y-2 sm:space-y-3">
+                        <label className="block font-black uppercase text-base sm:text-lg tracking-tight">Post Image</label>
+                        <div className={`border-4 border-black border-dashed p-6 sm:p-10 text-center cursor-pointer hover:bg-[var(--accent)] transition-colors relative transition-all ${preview ? 'p-0 border-solid' : ''}`}>
                             {!preview ? (
                                 <>
                                     <input
@@ -74,8 +74,8 @@ const CreatePost = () => {
                                         accept="image/*"
                                         required
                                     />
-                                    <Upload className="mx-auto mb-4" size={48} strokeWidth={3} />
-                                    <p className="font-black uppercase text-sm tracking-widest">Select Image File</p>
+                                    <Upload className="mx-auto mb-2 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12" strokeWidth={3} />
+                                    <p className="font-black uppercase text-xs sm:text-sm tracking-widest">Select Image File</p>
                                 </>
                             ) : (
                                 <div className="relative aspect-square">
@@ -83,9 +83,9 @@ const CreatePost = () => {
                                     <button
                                         type="button"
                                         onClick={() => { setImage(null); setPreview(null); }}
-                                        className="absolute top-4 right-4 bg-[var(--secondary)] text-white border-4 border-black p-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+                                        className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-[var(--secondary)] text-white border-4 border-black p-1.5 sm:p-2 shadow-brutalist hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-brutalist-sm transition-all"
                                     >
-                                        <X size={24} strokeWidth={3} />
+                                        <X size={20} className="sm:size-[24px]" strokeWidth={3} />
                                     </button>
                                 </div>
                             )}
@@ -95,7 +95,7 @@ const CreatePost = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`w-full neo-button py-6 text-2xl font-black ${loading ? 'opacity-50 cursor-not-allowed' : 'bg-[var(--main)]'}`}
+                        className={`w-full neo-button py-4 sm:py-6 text-xl sm:text-2xl font-black ${loading ? 'opacity-50 cursor-not-allowed' : 'bg-[var(--main)]'}`}
                     >
                         {loading ? 'POSTING...' : 'PUBLISH NOW'}
                     </button>

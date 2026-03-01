@@ -27,25 +27,25 @@ const Login = () => {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-20">
-            <div className="neo-card bg-white">
-                <div className="flex items-center gap-3 mb-8">
-                    <LogIn size={40} className="text-[var(--main)]" />
-                    <h2 className="text-4xl font-black uppercase tracking-tighter">Login Required</h2>
+        <div className="max-w-md mx-auto mt-10 sm:mt-20">
+            <div className="neo-card bg-white p-6 sm:p-8">
+                <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                    <LogIn size={32} className="text-[var(--main)] sm:size-[40px]" />
+                    <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tighter">Login Required</h2>
                 </div>
 
                 {error && (
-                    <div className="bg-[var(--secondary)] text-white border-4 border-black p-4 mb-8 font-black uppercase text-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+                    <div className="bg-[var(--secondary)] text-white border-4 border-black p-3 sm:p-4 mb-6 sm:mb-8 font-black uppercase text-center shadow-brutalist">
                         {error}
                     </div>
                 )}
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                     <div className="space-y-2">
-                        <label className="block font-black uppercase text-lg tracking-tight">Email</label>
+                        <label className="block font-black uppercase text-base sm:text-lg tracking-tight">Email</label>
                         <input
                             type="email"
-                            className="neo-input w-full text-xl py-4"
+                            className="neo-input w-full text-lg sm:text-xl py-3 sm:py-4"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="admin@punchline.dev"
@@ -54,10 +54,10 @@ const Login = () => {
                     </div>
 
                     <div className="space-y-2">
-                        <label className="block font-black uppercase text-lg tracking-tight">Password</label>
+                        <label className="block font-black uppercase text-base sm:text-lg tracking-tight">Password</label>
                         <input
                             type="password"
-                            className="neo-input w-full text-xl py-4"
+                            className="neo-input w-full text-lg sm:text-xl py-3 sm:py-4"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="••••••••"
@@ -68,7 +68,7 @@ const Login = () => {
                     <button
                         type="submit"
                         disabled={isLoggingIn}
-                        className={`w-full neo-button py-6 mt-4 text-2xl font-black ${isLoggingIn ? 'opacity-50 cursor-not-allowed' : 'bg-[var(--main)]'}`}
+                        className={`w-full neo-button py-4 sm:py-6 mt-2 sm:mt-4 text-xl sm:text-2xl font-black ${isLoggingIn ? 'opacity-50 cursor-not-allowed' : 'bg-[var(--main)]'}`}
                     >
                         {isLoggingIn ? 'AUTHENTICATING...' : 'ENTER PUNCHLINE'}
                     </button>

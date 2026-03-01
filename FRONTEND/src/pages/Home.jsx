@@ -41,15 +41,15 @@ const Home = () => {
     }
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-12">
             {posts.length > 0 ? (
                 posts.map((post) => (
                     <PostCard key={post._id} image={post.image} caption={post.caption} />
                 ))
             ) : (
-                <div className="col-span-full text-center py-20 neo-card bg-[var(--accent)]">
-                    <p className="font-black text-4xl uppercase tracking-tighter">No posts yet!</p>
-                    <p className="font-bold text-lg mt-4 uppercase">Be the first player to start the feed.</p>
+                <div className="col-span-full text-center py-12 sm:py-20 neo-card bg-[var(--accent)]">
+                    <p className="font-black text-2xl sm:text-4xl uppercase tracking-tighter">No posts yet!</p>
+                    <p className="font-bold text-base sm:text-lg mt-4 uppercase">Be the first player to start the feed.</p>
                 </div>
             )}
         </div>

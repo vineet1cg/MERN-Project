@@ -10,7 +10,7 @@ const PostCard = ({ image, caption }) => {
                     className="w-full h-full object-cover"
                 />
             </div>
-            <p className="font-black text-xl leading-tight uppercase tracking-tight">
+            <p className="font-black text-lg sm:text-xl leading-tight uppercase tracking-tight">
                 {caption}
             </p>
         </div>

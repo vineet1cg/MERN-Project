@@ -42,11 +42,11 @@ const AdminSetup = () => {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-16">
-            <div className="neo-card bg-white">
+        <div className="max-w-md mx-auto mt-10 sm:mt-16 px-4">
+            <div className="neo-card bg-white p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-6">
-                    <ShieldCheck size={36} className="text-[var(--main)]" />
-                    <h2 className="text-3xl font-black uppercase tracking-tighter">Admin Setup</h2>
+                    <ShieldCheck size={32} className="text-[var(--main)] sm:size-[36px]" />
+                    <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-tighter">Admin Setup</h2>
                 </div>
 
                 {message && (
