@@ -5,7 +5,7 @@ app.use(express.json());
 
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://mern-project-vineet.netlify.app',
+    'https://private-gallery-vs.netlify.app',
     process.env.FRONTEND_URL,
 ].filter(Boolean); // remove undefined/null values
 
