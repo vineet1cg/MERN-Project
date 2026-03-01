@@ -9,6 +9,7 @@ export const themes = [
     { id: 'retro', name: 'Retro Pop', class: 'theme-retro' },
     { id: 'acid', name: 'Acid Tech', class: 'theme-acid' },
     { id: 'sunset', name: 'Sunset Clash', class: 'theme-sunset' },
+    { id: 'soft', name: 'Soft Whisper', class: 'theme-soft' },
 ]
 
 export const ThemeProvider = ({ children }) => {

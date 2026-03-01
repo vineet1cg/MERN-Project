@@ -70,7 +70,7 @@ const Login = () => {
                         disabled={isLoggingIn}
                         className={`w-full neo-button py-4 sm:py-6 mt-2 sm:mt-4 text-xl sm:text-2xl font-black ${isLoggingIn ? 'opacity-50 cursor-not-allowed' : 'bg-[var(--main)]'}`}
                     >
-                        {isLoggingIn ? 'AUTHENTICATING...' : 'ENTER PUNCHLINE'}
+                        {isLoggingIn ? 'AUTHENTICATING...' : 'ENTER WHISPERWALL'}
                     </button>
 
                     <p className="text-center mt-6 font-bold text-gray-600 uppercase tracking-widest text-sm">

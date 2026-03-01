@@ -17,7 +17,7 @@ const Navbar = () => {
         <nav className="border-b-[var(--border-width)] border-black bg-accent p-4 sticky top-0 z-50">
             <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
                 <Link to="/" className="text-2xl sm:text-3xl font-black uppercase tracking-tighter hover:skew-x-2 transition-transform">
-                    Punchline
+                    WhisperWall
                 </Link>
                 <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
                     <ThemeSwitcher />

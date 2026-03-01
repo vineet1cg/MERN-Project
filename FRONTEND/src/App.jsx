@@ -10,7 +10,7 @@ import { ThemeProvider } from './theme/ThemeContext'
 
 function App() {
     React.useEffect(() => {
-        document.title = 'Punchline | Neobrutalist Social'
+        document.title = 'WhisperWall | Neobrutalist Social'
     }, [])
 
     return (
