@@ -14,7 +14,7 @@ export const themes = [
 
 export const ThemeProvider = ({ children }) => {
     const [currentTheme, setCurrentTheme] = useState(() => {
-        return localStorage.getItem('app-theme') || 'mono'
+        return localStorage.getItem('app-theme') || 'soft'
     })
 
     useEffect(() => {

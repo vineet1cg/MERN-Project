@@ -14,28 +14,28 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="border-b-[var(--border-width)] border-black bg-accent p-4 sticky top-0 z-50">
-            <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
-                <Link to="/" className="text-2xl sm:text-3xl font-black uppercase tracking-tighter hover:skew-x-2 transition-transform">
+        <nav className="border-b-[var(--border-width)] border-black bg-accent p-3 sm:p-4 sticky top-0 z-50">
+            <div className="container mx-auto flex flex-wrap justify-between items-center gap-2 sm:gap-0">
+                <Link to="/" className="text-xl sm:text-3xl font-black uppercase tracking-tighter hover:skew-x-2 transition-transform">
                     WhisperWall
                 </Link>
-                <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+                <div className="flex items-center gap-1.5 sm:gap-4">
                     <ThemeSwitcher />
 
                     {isAuthenticated && (
                         <>
-                            <Link to="/" className="neo-button flex items-center gap-2 bg-white px-3 sm:px-5">
-                                <Home size={18} className="sm:size-[20px]" />
+                            <Link to="/" className="neo-button flex items-center gap-1 bg-white px-2 py-2 sm:px-5 sm:py-3">
+                                <Home size={16} />
                                 <span className="hidden md:inline">Home</span>
                             </Link>
 
-                            <Link to="/create" className="neo-button flex items-center gap-2 bg-[var(--main)] text-black px-3 sm:px-5">
-                                <PlusCircle size={18} className="sm:size-[20px]" />
+                            <Link to="/create" className="neo-button flex items-center gap-1 bg-[var(--main)] text-black px-2 py-2 sm:px-5 sm:py-3">
+                                <PlusCircle size={16} />
                                 <span className="hidden md:inline">New Post</span>
                             </Link>
 
-                            <button onClick={handleLogout} className="neo-button flex items-center gap-2 bg-[var(--danger)] text-white hover:bg-red-600 transition-colors px-3 sm:px-5">
-                                <LogOut size={18} className="sm:size-[20px]" />
+                            <button onClick={handleLogout} className="neo-button flex items-center gap-1 bg-[var(--danger)] text-white hover:bg-red-600 transition-colors px-2 py-2 sm:px-5 sm:py-3">
+                                <LogOut size={16} />
                                 <span className="hidden md:inline">Logout</span>
                             </button>
                         </>

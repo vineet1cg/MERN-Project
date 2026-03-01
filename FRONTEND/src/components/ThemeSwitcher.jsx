@@ -35,7 +35,7 @@ const ThemeSwitcher = () => {
             </button>
 
             {isOpen && (
-                <div className="absolute right-0 mt-3 w-56 bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-[100] animate-in fade-in zoom-in-95 duration-100 origin-top-right">
+                <div className="absolute left-0 sm:left-auto sm:right-0 mt-3 w-48 sm:w-56 bg-white border-4 border-black shadow-brutalist-lg z-[100]">
                     <div className="p-2 bg-black text-white text-[10px] font-black uppercase tracking-widest text-center">
                         Select Aesthetic
                     </div>
