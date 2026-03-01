@@ -18,6 +18,7 @@
     --text: #000000;
     /* Pure Black */
     --border-width: 4px;
+    --danger: #EF4444;
 }
 
 /* HIGH-IMPACT THEME CLASSES */
@@ -63,11 +64,18 @@
 }
 
 .theme-soft {
-    --main: #F472B6;    /* Pink 400 */
-    --secondary: #BE185D; /* Pink 700 */
-    --accent: #FDF2F8;  /* Pink 50 */
-    --bg: #FCE7F3;      /* Pink 100 */
-    --text: #000000;
+    --main: #FF4D94;
+    /* Vibrant Pink */
+    --secondary: #991B1B;
+    /* Dark Deep Red */
+    --accent: #2D121D;
+    /* Dark Muted Pink */
+    --bg: #1A0B12;
+    /* Deep Pinkish Black */
+    --text: #FFFFFF;
+    /* White for Contrast */
+    --danger: #F43F5E;
+    /* Rose 500 */
 }
 
 @layer base {
